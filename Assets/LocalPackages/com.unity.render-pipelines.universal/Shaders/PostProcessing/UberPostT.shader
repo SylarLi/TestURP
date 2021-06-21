@@ -168,7 +168,7 @@ Shader "Hidden/Universal Render Pipeline/UberPostT"
                 }
 
                 bloom.xyz *= BloomIntensity;
-                color += bloom.xyz * BloomTint;
+                half3 add = bloom.xyz * BloomTint;
 
                 #if defined(BLOOM_DIRT)
                 {
@@ -178,11 +178,17 @@ Shader "Hidden/Universal Render Pipeline/UberPostT"
                     // distortion is active.
                     half3 dirt = SAMPLE_TEXTURE2D(_LensDirt_Texture, sampler_LinearClamp, uvDistorted * LensDirtScale + LensDirtOffset).xyz;
                     dirt *= LensDirtIntensity;
-                    color += dirt * bloom.xyz;
+                    add += dirt * bloom.xyz;
                 }
                 #endif
 
+                color += add;
+
+                // 在添加半透明通道的条件下模拟还原不透明bloom效果
+                // bloomTex alpha通道和亮度叠加到原始alpha通道
+                // 高亮部分类似，spread不如原生bloom效果
                 alpha += bloom.w;
+                alpha += Luminance(add);
             }
             #endif
 
