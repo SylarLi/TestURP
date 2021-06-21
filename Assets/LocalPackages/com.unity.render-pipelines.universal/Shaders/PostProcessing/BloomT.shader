@@ -53,7 +53,7 @@ Shader "Hidden/Universal Render Pipeline/BloomT"
             color.rgb = min(ClampMax, color.rgb);
 
             // Thresholding
-            half brightness = Max3(color.r, color.g, color.b);
+            half brightness = Max3(color.r, color.g, color.b) * color.a;
             half softness = clamp(brightness - Threshold + ThresholdKnee, 0.0, 2.0 * ThresholdKnee);
             softness = (softness * softness) / (4.0 * ThresholdKnee + 1e-4);
             half multiplier = max(brightness - Threshold, softness) / max(brightness, 1e-4);

@@ -1217,6 +1217,8 @@ namespace UnityEngine.Rendering.Universal.Internal
 
             public static readonly int _FullscreenProjMat  = Shader.PropertyToID("_FullscreenProjMat");
 
+            public static readonly int _Bloom_AlphaAdd = Shader.PropertyToID("_Bloom_AlphaAdd");
+
             public static int[] _BloomMipUp;
             public static int[] _BloomMipDown;
         }

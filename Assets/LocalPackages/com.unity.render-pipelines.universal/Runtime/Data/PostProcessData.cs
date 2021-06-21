@@ -68,7 +68,7 @@ namespace UnityEngine.Rendering.Universal
             [Reload("Shaders/PostProcessing/UberPostT.shader")]
             public Shader uberPostTPS;
 
-            [Reload("Shaders/PostProcessing/FinalPost.shader")]
+            [Reload("Shaders/PostProcessing/FinalPostT.shader")]
             public Shader finalPostPassPS;
         }
 

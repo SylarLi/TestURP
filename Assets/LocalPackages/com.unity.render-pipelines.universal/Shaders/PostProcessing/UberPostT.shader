@@ -125,7 +125,7 @@ Shader "Hidden/Universal Render Pipeline/UberPostT"
                 // spectral lut. Performs significantly better on lower end GPUs.
                 float2 coords = 2.0 * uv - 1.0;
                 float2 end = uv - coords * dot(coords, coords) * ChromaAmount;
-                float2 delta = (end - uv) / 3.0;
+                float2 delta = (end - uv) / 3.0; 
 
                 half2 ra = SAMPLE_TEXTURE2D_X(_BlitTex, sampler_LinearClamp, uvDistorted                ).xw;
                 half g = SAMPLE_TEXTURE2D_X(_BlitTex, sampler_LinearClamp, DistortUV(delta + uv)      ).y;
@@ -182,8 +182,7 @@ Shader "Hidden/Universal Render Pipeline/UberPostT"
                 }
                 #endif
 
-                // 取像素alpha和bloomTex的较大值
-                alpha = max(alpha, bloom.w);
+                alpha += bloom.w;
             }
             #endif
 
