@@ -27,10 +27,10 @@ MonoBehaviour:
     lutBuilderLdrPS: {fileID: 4800000, guid: 65df88701913c224d95fc554db28381a, type: 3}
     lutBuilderHdrPS: {fileID: 4800000, guid: ec9fec698a3456d4fb18cf8bacb7a2bc, type: 3}
     bloomPS: {fileID: 4800000, guid: 5f1864addb451f54bae8c86d230f736e, type: 3}
-    bloomTPS: {fileID: 4800000, guid: 3f7f51fa6d2936a4888d509a50c1e286, type: 3}
+    bloomTPS: {fileID: 4800000, guid: b9ad70f6d09817e4d84634a8e61c6e28, type: 3}
     uberPostPS: {fileID: 4800000, guid: e7857e9d0c934dc4f83f270f8447b006, type: 3}
-    uberPostTPS: {fileID: 4800000, guid: 294c4cc79cfaa3949af3823e587cd7a2, type: 3}
-    finalPostPassPS: {fileID: 4800000, guid: 331e2f983aa6a35449539a565adaf90a, type: 3}
+    uberPostTPS: {fileID: 4800000, guid: f3ac68102b4554b4694ea1a6186aa41b, type: 3}
+    finalPostPassPS: {fileID: 4800000, guid: e5209f59874ce9b4f84895e01625f291, type: 3}
   textures:
     blueNoise16LTex:
     - {fileID: 2800000, guid: 81200413a40918d4d8702e94db29911c, type: 3}
